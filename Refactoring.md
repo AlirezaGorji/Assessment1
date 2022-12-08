@@ -9,3 +9,5 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+I tried to eliminatte many if/else statements so it is more readable.
+Since crypto.createHash used twice I place it into a new function and passed it the actual data to be hashed.
