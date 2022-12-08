@@ -16,4 +16,10 @@ describe("deterministicPartitionKey", () => {
     const trivialKey = deterministicPartitionKey({partitionKey: 'test'});
     expect(trivialKey).toBe('test');
   });
+
+  it("Returns the value of partitionKey even if other attributes are passed ", () => {
+    const trivialKey = deterministicPartitionKey({partitionKey: 'test', otherAttr: 'test2'});
+    expect(trivialKey).toBe('test');
+  });
+
 });

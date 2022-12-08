@@ -25,5 +25,10 @@ and then update all Agents table records in a loop. then we can remove the "Allo
 Third: Write a function to generate random 6-digit string including capital letters and string to generate agent ids when we create a new agent. It should only save this column only when new record is generated so does not touch this column when editing an agent. 
 
 Forth: In the generateReport I assume that it runs a query which gets the report and it should have a join between Facilities and Agents tables. We should add the new column AgentId in the query so something like Agents.AgentId is added to the select part of that query.
-
+So it should be something like this:
+SELECT        dbo.Agents.AgentId
+FROM            dbo.Agents INNER JOIN
+                         dbo.Shifts ON dbo.Agents.Id = dbo.Shifts.AgentId INNER JOIN
+                         dbo.Facilities ON dbo.Shifts.FacilityId = dbo.Facilities.Id
+                         
 Fifth: In getShiftsByFacility funtion for the meta data part, we should add the new column AgentId since AgentId is art of the meta data of the agent now.

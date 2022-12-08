@@ -14,3 +14,4 @@ exports.deterministicPartitionKey = (event) => {
   candidate = candidate.length > MAX_PARTITION_KEY_LENGTH ? crypto.createHash("sha3-512").update(candidate).digest("hex") : candidate;
   return candidate;
 };
+
